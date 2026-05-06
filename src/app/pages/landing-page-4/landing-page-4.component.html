@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Face Angle Secret | Gentle Gator Golf</title>
+    <style>
+        :root {
+            --primary-green: #1a4a2b;
+            --dark-grey: #111111;
+            --text-grey: #2a2a2a;
+            --light-bg: #f7f3ec;
+            --rule-color: #b5a98a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 21px;
+            line-height: 2;
+            color: var(--text-grey);
+            background-color: var(--light-bg);
+        }
+
+        /* ── LAYOUT ── */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 36px;
+            background: #fff;
+        }
+
+        /* ── HEADLINE ── */
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            color: var(--dark-grey);
+            line-height: 1.18;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        /* ── INTRO ── */
+        .intro-text {
+            font-size: 1.3rem;
+            color: #222;
+            line-height: 1.95;
+            margin-bottom: 20px;
+        }
+
+        /* ── ROADMAP CALLOUT ── */
+        .article-roadmap {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.05rem;
+            color: #333;
+            background: #eef4ee;
+            border-left: 6px solid var(--primary-green);
+            padding: 18px 22px;
+            margin-bottom: 56px;
+            line-height: 1.8;
+        }
+
+        /* ── SECTION DIVIDERS ── */
+        .content-section {
+            padding: 28px 0 0;
+            margin-top: 28px;
+            border-top: 3px solid var(--rule-color);
+        }
+
+        /* ── SECTION HEADINGS ── */
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 2.1rem;
+            color: var(--primary-green);
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+
+        /* ── SECTION LABEL ABOVE H2 ── */
+        .section-label {
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--rule-color);
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-top: 10px;
+            line-height: 1.85;
+        }
+
+        /* ── BULLET LIST ── */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 16px;
+        }
+
+        .bullet-list li {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+
+        .bullet-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-green);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+
+        .bullet-body { flex: 1; }
+
+        .bullet-title {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--dark-grey);
+            margin-bottom: 4px;
+        }
+
+        .bullet-body p {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        /* ── BYLINE ── */
+        .blog-byline {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .author-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .byline-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .byline-pre {
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            color: #888;
+        }
+
+        .byline-name {
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: 0.03em;
+        }
+
+        .byline-date {
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .byline-partner {
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            color: var(--primary-green);
+        }
+
+        /* ── CLOCK EQUATION ── */
+        .clock-equation {
+            font-family: Arial, sans-serif;
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            font-weight: 900;
+            color: var(--dark-grey);
+            text-align: center;
+            letter-spacing: 0.04em;
+            margin: 20px 0 12px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        /* ── MEDIA: full-bleed videos ── */
+        .clock-container {
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+        }
+
+        .clock-container--centered {
+            max-width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0;
+        }
+
+        .clock-video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ── MEDIA: side-by-side images ── */
+        .side-by-side {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .side-by-side img {
+            width: calc(35% - 6px);
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+        }
+
+        .img-square {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* ── MEDIA: full-width image ── */
+        .full-width-img, .loop-video {
+            width: 70%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .loop-video {
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        /* ── CAPTION ── */
+        .media-caption {
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* ── DATA VISUALIZATION PLACEHOLDER ── */
+        .data-visualization {
+            background: #eef4ee;
+            border: 2px solid var(--primary-green);
+            border-radius: 6px;
+            padding: 28px 24px;
+            text-align: center;
+            margin: 28px 0;
+        }
+
+        .data-visualization h3 {
+            font-family: Georgia, serif;
+            font-size: 1.6rem;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        .data-visualization p {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* ── FINAL CTA ── */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: #f8faf9;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: Arial, sans-serif;
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            font-weight: 900;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: #111;
+        }
+
+        .cta-sub {
+            font-family: Arial, sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
+            max-width: 560px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary-green);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 0.12em;
+            padding: 1.25rem 3.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-primary.large {
+            font-size: 1.25rem;
+            padding: 1.5rem 4.5rem;
+        }
+
+        .btn-primary:hover { background: #12351f; transform: translateY(-2px); }
+
+        /* ── REVIEWS ── */
+        .reviews {
+            padding: 4rem 2rem;
+            background: #1a2e22;
+            color: #fff;
+            text-align: center;
+        }
+
+        .reviews-eyebrow {
+            font-size: 1.5rem;
+            color: #f5c518;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.75rem;
+        }
+
+        .reviews h2 {
+            font-family: Arial, sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            line-height: 1.1;
+        }
+
+        .reviews-accent {
+            color: #f5c518;
+        }
+
+        .reviews-label {
+            color: #fff;
+        }
+
+        .reviews-rule {
+            width: 60px;
+            height: 4px;
+            background: #f5c518;
+            border-radius: 2px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .stars-summary {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .big-stars { font-size: 1.75rem; color: #f5c518; }
+        .big-rating { font-size: 2rem; font-weight: 800; color: #f5c518; }
+        .big-count { font-size: 1rem; opacity: 0.6; }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+            max-width: 860px;
+            margin: 0 auto 2.5rem;
+            text-align: left;
+        }
+
+        .review-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .review-stars { color: #f5c518; font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+        .review-quote {
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .review-author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .author-name { font-weight: 700; font-size: 0.82rem; font-family: Arial, sans-serif; }
+        .author-date { font-size: 0.75rem; opacity: 0.5; font-family: Arial, sans-serif; }
+
+        /* ── GUARANTEE ── */
+        .guarantee {
+            padding: 4rem 2rem;
+            background: var(--primary-green);
+            color: #fff;
+        }
+
+        .guarantee-inner {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guarantee-badge {
+            font-size: 3rem;
+            font-weight: 900;
+            border: 4px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .guarantee-text h3 {
+            font-family: Arial, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.6rem;
+            color: #fff;
+        }
+
+        .guarantee-text p {
+            font-family: Arial, sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.85;
+            margin-top: 0;
+        }
+
+        /* ── BLOG NAV ── */
+        .blog-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.85rem 2rem;
+            border-bottom: 1px solid #ddd;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .blog-nav-logo img { display: block; }
+
+        .blog-nav-social {
+            display: flex;
+            gap: 1.1rem;
+            align-items: center;
+        }
+
+        .blog-nav-social a {
+            color: #555;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+
+        .blog-nav-social a:hover { color: var(--primary-green); }
+
+        /* ── FOOTER ── */
+        .blog-footer {
+            border-top: 1px solid #ddd;
+            padding: 1.25rem 1.5rem;
+            text-align: center;
+            color: #aaa;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.55rem; }
+            .container { padding: 20px 16px 40px; }
+            body { font-size: 18px; }
+            .side-by-side { flex-direction: column; align-items: center; }
+            .side-by-side img { width: 100%; }
+            .final-cta { padding: 3rem 1.25rem; }
+            .btn-primary, .btn-primary.large { padding: 1rem 1.5rem; font-size: 1rem; letter-spacing: 0.06em; word-break: break-word; }
+            .clock-container--centered { max-width: 90%; }
+            .guarantee-inner { flex-direction: column; text-align: center; }
+            .data-visualization { padding: 20px 14px; }
+            .reviews { padding: 3rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="blog-nav">
+        <a class="blog-nav-logo" href="/">
+            <img src="assets/images/Logo.PNG" alt="Gentle Gator Golf" style="height: 36px; object-fit: contain;">
+        </a>
+        <div class="blog-nav-social">
+            <a href="https://www.youtube.com/@gentlegatorgolf" target="_blank" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/gentlegatorgolf" target="_blank" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.2 4.8 1.7 5 5 .1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.2 3.3-1.7 4.8-5 5-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.2-4.8-1.7-5-5C2.1 15.6 2 15.3 2 12s0-3.6.1-4.8c.2-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9C.3 21.3 2.7 23.7 7.1 23.9 8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7C24 15.7 24 15.3 24 12s0-3.7-.1-4.9C23.7 2.7 21.3.3 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@gentlegatorgolf" target="_blank" aria-label="TikTok">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 3.3A4.9 4.9 0 0 1 14.7 0h-3.6v16.3a2.9 2.9 0 1 1-2-2.8V9.8a6.5 6.5 0 1 0 5.6 6.5V8.1a8.4 8.4 0 0 0 4.9 1.6V6.1a4.9 4.9 0 0 1-3.1-1.1 4.8 4.8 0 0 1-1.8-1.7z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <header>
+            <h1>The Mistake That's Right In Front of Your Eyes And It's Killing Your Drives</h1>
+
+            <div class="blog-byline">
+                <img class="author-avatar" src="assets/images/hoyt_avatar.jpg" alt="Hoyt Hicks">
+                <div class="byline-text">
+                    <span class="byline-pre">By</span>
+                    <span class="byline-name">Steven Shank</span>
+                    <span class="byline-date">May 3, 2026</span>
+                    <span class="byline-partner">In Partnership With Gentle Gator Golf</span>
+                </div>
+            </div>
+
+            <p class="intro-text">
+                In golf, a tiny mistake at address leads to a huge miss down the fairway.
+                Being off by just 1 tick on a clock face at impact is the difference between a perfect drive
+                and a ball lost in the woods. For most golfers, the problem isn't their swing—it's
+                that they are aiming their clubface at the wrong target without even knowing it.
+            </p>
+
+            <p class="clock-equation">1 minute on a clock = 6° = <span style="color: #c0392b;">48 yards offline</span></p>
+            <div class="clock-container clock-container--centered">
+                <video class="clock-video" style="max-width: 100%; margin: 0 auto; display: block;" autoplay loop [muted]="true" playsinline>
+                    <source src="assets/images/Clock.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </header>
+
+        <section class="content-section" style="margin-top: 1.5rem;">
+            <span class="section-label">The Problem</span>
+            <h2>The Slice and Hook Trap</h2>
+            <p>You can have the best swing in the world, but if your clubface isn't
+                square at the moment of impact, the ball is going to curve. Most golfers
+                fight a slice or a hook or worse both. This isn't uncomon because modern drivers don't have good references for aiming
+                This can make even being repeatable with a single miss difficult because minute changes are hard to detect</p>
+            
+            <ul class="bullet-list">
+                <li>
+                    <div class="bullet-icon">1</div>
+                    <div class="bullet-body">
+                        <span class="bullet-title">Drivers Are Hard to Aim</span>
+                        <p>Drivers have no flat edges or aiming guides making aiming the clubface
+                            a complete guessing game. Imagine trying to level a picture frame that
+                        is an oval instead of a square.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="bullet-icon">2</div>
+                    <div class="bullet-body">
+                        <span class="bullet-title">Small Miss, Big Trouble</span>
+                        <p>A miss that looks small at your feet becomes massive 250 yards away.
+                            What feels like a slight tweak often ends up over 40 yards offline and in trouble.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="side-by-side">
+                <img src="assets/images/Left.PNG" alt="Visualizing a Closed Face Angle">
+                <img src="assets/images/Right.PNG" alt="Visualizing an Open Face Angle">
+            </div>
+        </section>
+
+        <section class="content-section">
+            <span class="section-label">The Solution</span>
+            <h2>Face Pointers</h2>
+            <p>Face pointer have been around forever and simply use magnets to attach to the club face.
+                You then use the pointer as a visual guide to make sure your face is square to the target
+                 line at impact.
+            </p>
+            
+            <ul class="bullet-list">
+                <li>
+                    <div class="bullet-icon">1</div>
+                    <div class="bullet-body">
+                        <span class="bullet-title">Magnets Don't Work for Drivers</span>
+                        <p>Today's high-performance drivers are made of titanium and carbon fiber which are not magnetic. So the traditional <strong>magnetic face pointers fail</strong> to stick!</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="bullet-icon">2</div>
+                    <div class="bullet-body">
+                        <span class="bullet-title">A Tool Is Just a Tool Without Instruction</span>
+                        <p>Online resources are scattered and focus on the swing instead of the club face. Drive Align 
+                            inlcudes a simple, 5 lesson video series that teaches you how to use the tool to fix your aim and start hitting straighter drives.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            
+            <img
+                    src="assets/images/Straight.PNG"
+                    alt="A Perfectly Square Face Alignment"
+                    class="full-width-img img-square"
+                >
+            <p class="media-caption">A square face at impact is the difference between a fairway and a phone call to find your ball.</p>
+        </section>
+
+        <section class="content-section">
+            <span class="section-label">The Tool</span>
+            <h2>Drive Align: Not Just Another Face Pointer</h2>
+            <p> I was tired of taping objects to my driver leaving nasty residue on my club and not to mention the result
+                was never straight. Cheap kids toys fall off and get bent out of shape faster than you can put them on. I wanted a real tool that was designed for the modern driver and could give me an instant visual of where my clubface was pointing at address and impact.
+                So I Invented Drive Align — the only face pointer designed for modern drivers.
+            </p>
+            
+            <ul class="bullet-list">
+                <li>
+                    <div class="bullet-icon">1</div>
+                    <div class="bullet-body">
+                        <span class="bullet-title">Drive Align Sticks To Drivers</span>
+                        <p>This is why I invented <strong>Drive Align</strong>. It's the only face pointer designed for modern drivers. It presses directly onto the face, giving you an instant visual of where your driver is pointing.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="bullet-icon">2</div>
+                    <div class="bullet-body">
+                        <span class="bullet-title">Fast and Easy Setup</span>
+                        <p>We made this for the range. It sticks on in easily and stays put,
+                            so you can practice your aim to hit the ball straighter.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <video class="loop-video" autoplay loop [muted]="true" playsinline>
+                    <source src="assets/images/Full_Video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            <p class="media-caption">Drive Align snaps on in seconds — instant proof of exactly where your driver is pointed.</p>
+        </section>
+
+        <div class="data-visualization">
+            <h3>How Much Distance Are You Losing? </h3>
+            <h3>Use the Calculator to Find out!</h3>
+            <app-trajectory-display />
+        </div>
+
+        <section class="final-cta">
+            <h2>READY TO HIT STRAIGHTER, LONGER, HIGHER DRIVES?</h2>
+            <p class="cta-sub">Every order includes the <strong>Drive Align Video Series</strong> step-by-step videos to lock in your aim and reduce spin for higher longer drives.</p>
+            <a class="btn-primary large" href="https://gentlegatorgolf.com/products/drive-align" target="_blank">GET DRIVE ALIGN + VIDEO SERIES — $34.99</a>
+        </section>
+
+    </div>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+        <h2><span class="reviews-label">THE BUZZ ON</span> <span class="reviews-accent"> DRIVE ALIGN</span></h2>
+        <div class="stars-summary">
+            <span class="big-stars">★★★★★</span>
+            <span class="big-rating">4.8</span>
+            <span class="big-count">/ 5 · 34 reviews</span>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"I'm a PGA instructor and I been testing both products out with my clients and golf classes. When I was telling them that they are not aiming in the right spot and using the tools to show them, it was an eye-opener."</p>
+                <div class="review-author">
+                    <span class="author-name">Greg C.</span>
+                    <span class="author-date">7/21/2025</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"This has helped me tremendously with my club face alignment. Fantastic product and I'm glad I purchased this."</p>
+                <div class="review-author">
+                    <span class="author-name">Jonathan S.</span>
+                    <span class="author-date">6/24/2025</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"Recently purchased the drive align to help with aiming during practice. Sticks well to the driver face. Customer service at its finest!! Thank you!!!"</p>
+                <div class="review-author">
+                    <span class="author-name">Javier D.</span>
+                    <span class="author-date">9/4/2024</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"I have had a similar product for use with irons (magnetic) and found that to be useful. Always wished that there was something that would work with my driver so I was glad when this popped up in my Instagram feed."</p>
+                <div class="review-author">
+                    <span class="author-name">David D.</span>
+                    <span class="author-date">5/27/2025</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"Really nice tool. Not too big either so it fits in the golf bag. Helped me realize how my setup was leading to my slice."</p>
+                <div class="review-author">
+                    <span class="author-name">Seth H.</span>
+                    <span class="author-date">7/28/2025</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"Great product, let's you see the difference a proper set up, verses having hands too high or too low."</p>
+                <div class="review-author">
+                    <span class="author-name">Joe C.</span>
+                    <span class="author-date">8/14/2025</span>
+                </div>
+            </div>
+        </div>
+        <a class="btn-primary" href="https://gentlegatorgolf.com/products/drive-align" target="_blank">SEE ALL REVIEWS</a>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section class="guarantee">
+        <div class="guarantee-inner">
+            <div class="guarantee-badge">30</div>
+            <div class="guarantee-text">
+                <h3>30-DAY MONEY BACK GUARANTEE</h3>
+                <p>If you don't add yards within 30 days, send it back for a full refund. No questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="blog-footer">
+        &copy; 2026 Gentle Gator LLC. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

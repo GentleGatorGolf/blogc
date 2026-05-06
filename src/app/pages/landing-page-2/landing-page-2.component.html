@@ -1,0 +1,158 @@
+<app-header />
+<app-banner />
+<div class="lp2-container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">DRIVE ALIGN BY GENTLE GATOR GOLF</p>
+      <h1>MAXIMUM DISTANCE.<br>FRACTION OF THE EFFORT.</h1>
+      <p class="hero-sub">The alignment tool that finally fixed my driver — and gained me 25 yards overnight.</p>
+      <a class="btn-primary" href="https://gentlegatorgolf.com/products/drive-align" target="_blank">SHOP NOW</a>
+    </div>
+    <div class="hero-image">
+      <img src="assets/images/drive_align.webp" alt="Drive Align product">
+    </div>
+  </section>
+
+  <!-- PRESS STRIP -->
+  <section class="press-strip">
+    <div class="press-inner">
+      <div class="press-item">
+        <span class="press-award">Best Driver Training Aid</span>
+        <span class="press-source">GOLF DIGEST</span>
+      </div>
+      <div class="press-divider"></div>
+      <div class="press-item">
+        <span class="press-award">Top Alignment Tool 2025</span>
+        <span class="press-source">MY GOLF SPY</span>
+      </div>
+      <div class="press-divider"></div>
+      <div class="press-item">
+        <span class="press-award">Editor's Pick</span>
+        <span class="press-source">GOLF MONTHLY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="mission-inner">
+      <h2>STOP GUESSING.<br>START ALIGNING.</h2>
+      <p>
+        Most amateur golfers struggle with driver distance not because of swing speed — but because of poor setup. Drive Align attaches directly to your club face with a powerful suction cup, giving you instant visual feedback on face angle, attack angle, and spine tilt. No more swinging and guessing.
+      </p>
+      <a class="btn-primary" href="https://gentlegatorgolf.com/products/drive-align" target="_blank">GET DRIVE ALIGN</a>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <h2>ALIGNMENT PERFECTED</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">🎯</div>
+        <h3>INSTANT FACE ANGLE FEEDBACK</h3>
+        <p>See exactly where your face is aimed before you swing.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📐</div>
+        <h3>ATTACK ANGLE GUIDE</h3>
+        <p>Dial in the upward strike that unlocks low-spin, high-launch drives.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔵</div>
+        <h3>STRONG SUCTION CUP</h3>
+        <p>Sticks firmly to any driver face. No marks, no residue.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📦</div>
+        <h3>FITS IN YOUR BAG</h3>
+        <p>Compact enough to take to every practice session and round.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🎓</div>
+        <h3>INCLUDES VIDEO SERIES</h3>
+        <p>Step-by-step drills to maximize your gains from day one.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">⚡</div>
+        <h3>IMMEDIATE RESULTS</h3>
+        <p>Golfers report 15–30 yard gains within their first session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="hiw-inner">
+      <div class="hiw-text">
+        <h2>THE SCIENCE BEHIND THE YARDS</h2>
+        <p>Your launch monitor doesn't lie. The two biggest distance killers for most amateurs are a <strong>low launch angle</strong> and <strong>high spin rate</strong> — a deadly combo that sends your ball ballooning and stopping dead on landing.</p>
+        <p>Drive Align lets you set up statically and dial in the exact positions that produce high-launch, low-spin drives — the same formula tour pros use to bomb it 300+.</p>
+        <a class="btn-secondary" href="https://gentlegatorgolf.com/products/drive-align" target="_blank">SEE HOW IT WORKS →</a>
+      </div>
+      <div class="hiw-image">
+        <img src="assets/images/Spin_With_Launch_combo.JPG" alt="Launch and spin chart">
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <h2>THE BUZZ ON DRIVE ALIGN</h2>
+    <div class="stars-summary">
+      <span class="big-stars">★★★★★</span>
+      <span class="big-rating">4.8</span>
+      <span class="big-count">/ 5 · 34 reviews</span>
+    </div>
+    <div class="reviews-grid">
+      @for (review of reviews; track review.author) {
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"{{ review.quote }}"</p>
+          <div class="review-author">
+            <span class="author-name">{{ review.author }}</span>
+            <span class="author-date">{{ review.date }}</span>
+          </div>
+        </div>
+      }
+    </div>
+    <a class="btn-primary" href="https://gentlegatorgolf.com/products/drive-align" target="_blank">SEE ALL REVIEWS</a>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee">
+    <div class="guarantee-inner">
+      <div class="guarantee-badge">60</div>
+      <div class="guarantee-text">
+        <h3>60-DAY MONEY BACK GUARANTEE</h3>
+        <p>If you don't add yards within 60 days, send it back for a full refund. No questions asked.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <h2>THE FULL LINEUP</h2>
+    <p class="products-sub">Every club, covered.</p>
+    <div class="products-grid">
+      @for (p of products; track p.title) {
+        <div class="product-card">
+          <img [src]="p.image" [alt]="p.title">
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.description }}</p>
+          <span class="product-price">{{ p.price }}</span>
+          <a class="btn-primary" [href]="p.url" target="_blank">SHOP {{ p.title | uppercase }}</a>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>READY TO FIND YOUR LOST YARDS?</h2>
+    <a class="btn-primary large" href="https://gentlegatorgolf.com/products/drive-align" target="_blank">GET DRIVE ALIGN — $34.99</a>
+  </section>
+
+</div>

@@ -1,0 +1,174 @@
+<app-header />
+<app-banner />
+<div class="landing-container">
+
+
+    <article class="blog-post-content">
+      <div class="blog-segment">
+        <div class="blog-text">
+          <h2>Hitting it Further</h2>
+            by
+            <div class="author-info" style="display: flex; gap: 1rem; padding: 1rem; font-weight: bold; color: var(--primary-green);">
+            <img src="assets/images/hoyt_avatar.jpg" alt="Hoyt Hicks" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-green);">
+            Hoyt
+          </div>
+          <p>
+            Over the course of the 2025 golf season I got tired of getting beaten off the tee by my two brothers. Most drives they would out drive me by 20-30yds. I tried different balls and equipment and neither made the impact I was looking for. At this point I decided to do a deep dive and understand what metrics actually mattered on the golf ball and then come up with a simple stepped plan to get me those lost yards.
+          </p>
+          <p>
+            Initially like most people increasing the golf ball velocity seems to be the intuitve first step. The faster I can get the ball to go the further it will go right? Unfortunately it wasn't that simple. My brothers and I used a ball launch monitor and to my suprise I actually had slightly higher ball velocity than either of my brothers.
+          </p>
+          <p>
+          What was different was my launch angle and spin. I had a low launch angle coupled with a higher spin. This made a lot of sense once I saw it. There trajectory looked like it pierced through the air and hit the ground rolling. Where as mine would come off the face and spin up, worst of all hit the ground and stop.
+          </p>
+        </div>
+      </div>
+    </article>
+
+  <section class="visualizer-section">
+    <div class="section-header">
+      <h2>Efficiency is Everything</h2>
+    </div>
+    <article class="blog-post-content">
+      <div class="blog-segment">
+        <div class="blog-text">
+          <h2>Physics of Flight: Spin is King</h2>
+          <p>
+            While speed provides the potential, <strong>spin dictates how that energy is used</strong>. 
+          </p>
+          <p>
+            Backspin creates a Magnus effect—the aerodynamic lift that keeps the ball in the air. However, there is a fine line between "functional lift" and "distance-killing drag." Too much spin causes the ball to balloon, climbing too steeply and then falling vertically, which sacrifices both carry and the crucial landing roll. Looking at the simulated trajectories below its easily seen that spin changes the trajectory and distance significantly
+          </p>
+        </div>
+        <div class="blog-image">
+          <img src="assets/images/SpinControl.JPG" alt="Spin Control Visualization">
+        </div>
+      </div>
+
+      <div class="blog-segment reverse">
+        <div class="blog-text">
+          <h2>The Holy Grail: The Launch-Spin Combo</h2>
+          <p>
+            True distance optimization happens at the intersection of launch angle and spin rate. There is a general inverse relationship that the best players in the world master:
+          </p>
+          <ul>
+            <li><strong>High Spin / Low Launch:</strong> Typically used for control and "stopping power" on the greens, but a disaster for total distance with the driver.</li>
+            <li><strong>Low Spin / High Launch:</strong> The "Long Drive" formula. By launching the ball higher into the air, you can afford to have less spin, allowing the ball to pierce through the air with less drag and maximize roll-out.</li>
+          </ul>
+          <p>
+            Adjusting your attack angle to "hit up" on the ball allows you to achieve that high-launch, low-spin combination that unlocks 20-30 yards of dormant potential in your current swing.
+          </p>
+        </div>
+        <div class="blog-image">
+          <img src="assets/images/Spin_With_Launch_combo.JPG" alt="Launch and Spin combination chart">
+        </div>
+      </div>
+    </article>
+    
+    <div class="simulator-wrapper">
+      <div class="simulator-header">
+        <h2 style="font-size: 2.25rem; margin-bottom: 0.5rem; color: var(--primary-green);">Simulate your ball flight!</h2>
+        <p style="font-size: 1.1rem; color: var(--text-muted); margin: 0;">See how much distance you can gain by optimizing your launch angle and spin</p>
+      </div>
+      <app-trajectory-display />
+    </div>
+
+    <article class="blog-post-content">
+      <div class="blog-segment">
+        <div class="blog-text">
+          <h2>Computer Says So, But Does It Really?</h2>
+          <p>
+            Initially I had a hard time getting my spin and launch angle to increase. Even with the help of a launch monitor there are so many different dials you can turn:
+          </p>
+          <ul>
+            <li>Stance Width</li>
+            <li>Ball Position</li>
+            <li>Spine Tilt</li>
+            <li>etc.</li>
+          </ul>
+          <p>
+            Even worse a lot of the metrics above affect the other. Hitting more and more balls on a launch monitor led to incosistent results. In an effort to help me visualize a better setup to high launch angle and low spin drives. I created Drive-Align. It features a strong suction that attaches to the driver face and let me dial in my setup. I was able to mess with all of the factors statically and get instant feedback rather than swinging, analyzing video and then trying to make some dynamic change 
+          </p>
+          <p>
+            Very quickly I was able to find my lost distance and consistently. Check out the results below!
+          </p>
+        </div>
+      </div>
+    </article>
+    
+    <div class="optimizer-wrapper">
+      <div class="optimizer-header">
+        <h2>Real world results</h2>
+      </div>
+      <app-distance-optimizer />
+    </div>
+
+    <article class="blog-post-content">
+      <div class="blog-segment">
+        <div class="blog-text">
+          <h2>Want to try it for yourself?</h2>
+          <p>
+            The same tool I used was Drive Align from Gentle Gator Golf. It comes with a video series with simple drills to help understand all the knobs to tune and how to optimize them.
+          </p>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="product-section">
+    <div class="section-header">
+      <h2>Engineered for Consistency</h2>
+      <p>Every tool is designed to provide immediate tactile and visual feedback.</p>
+    </div>
+    <div class="bundle-features">
+      @for (p of products; track p.title) {
+        <app-product-card [product]="p" />
+      }
+    </div>
+  </section>
+
+  <section class="reviews-section">
+    <div class="review-header-container">
+      <h2>RATED BY GOLFERS LIKE YOU</h2>
+      <div class="big-rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-num">4.8</span>
+      </div>
+      <button class="cta-button gold">IMPROVE TODAY</button>
+      <p class="coach-text">Coaches and Golfers love our alignment products because it is the fastest way to get great results!</p>
+    </div>
+
+    <div class="reviews-columns">
+      <div class="column">
+        @for (review of reviews.slice(0, 3); track review.author) {
+          <div class="review-card themed">
+            <div class="card-header">
+              <div class="stars small">★★★★★</div>
+              <div class="author-info">
+                <span class="name">{{ review.author }}</span>
+                <span class="date">{{ review.date }}</span>
+              </div>
+            </div>
+            <p class="quote">"{{ review.quote }}"</p>
+          </div>
+        }
+      </div>
+      <div class="column">
+        @for (review of reviews.slice(3, 6); track review.author) {
+          <div class="review-card themed">
+            <div class="card-header">
+              <div class="stars small">★★★★★</div>
+              <div class="author-info">
+                <span class="name">{{ review.author }}</span>
+                <span class="date">{{ review.date }}</span>
+              </div>
+            </div>
+            <p class="quote">"{{ review.quote }}"</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+</div>
